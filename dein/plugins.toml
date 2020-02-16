@@ -1,0 +1,71 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+  autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
+'''
+
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+depends = ['iceberg.vim']
+hook_add = '''
+  let g:lightline = {
+    \ 'colorscheme': 'iceberg',
+    \ }
+'''
+
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let g:NERDTreeShowHidden = 1
+  nnoremap <silent><C-n> :NERDTreeToggle<CR>
+'''
+
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup=1
+  let g:indent_guides_start_level=2
+  let g:indent_guides_guide_size=1
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd guibg=#232526 ctermbg=235
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#333333 ctermbg=236
+'''
+
+
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+hook_add = '''
+  let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+  let g:EasyMotion_use_upper = 1
+'''
+
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_vert_resize = 3
+  let g:winresizer_horiz_resize = 3
+'''
